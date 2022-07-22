@@ -1,0 +1,74 @@
+#indexTopImage {
+  padding-top: 10%;
+  margin: 10px 10px 0px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#topImageFont {
+  font-family: 'Lateef', sans-serif;
+  font-style: italic;
+  font-size: 100px;
+  text-align: center;
+  padding-bottom: 10%;
+}
+
+#container {
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+  max-width: 980px;
+  margin: 0, auto;
+}
+
+#testButton, #practiceButton {
+  border-radius: 10px;
+  width: 50%;
+  background-color: whitesmoke;
+  margin: 0px 25px 0px 25px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.592);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+  text-align: center;
+  padding: 50px 0px;
+}
+
+#excelUpload {
+  display: block;
+  border-radius: 10px;
+  width: 100% - 25px;
+  margin: 0px 25px 30px 25px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.592);
+  background-color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 250%;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+input {
+  display: none;
+}
+
+#excelUpload:hover, #testButton:hover, #practiceButton:hover {
+  box-shadow: 0px 0px 2px 1px #0a3711;
+  color: white;
+  background-color: #0a3711;
+}
+
+#excelUpload.uploaded {
+  box-shadow: 0px 0px 2px 1px #0a3711;
+  color: white;
+  background:#0a3711;
+  background-color: #0a3711;
+}

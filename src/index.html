@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ID Test</title>
+
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src=" https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+
+  <link rel="stylesheet" href="./index.css" />
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <header></header>
+  <section>
+
+    <div id="indexTopImage">
+      <div id="topImageFont">ID TEST</div>
+    </div>
+
+    <label id="excelUpload" for="input-file">
+      UPLOAD
+    </label>
+    <input type="file" id="input-file" onchange=readExcel() />
+
+    <div id="container">
+      <div id="testButton">TEST</div>
+      <div id="practiceButton">PRACTICE</div>
+    </div>
+
+
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  width: 980px;
+}
+
+.familyNameContainer {
+  margin: 20px 0px;
+  text-align: center;
+  position: relative;
+}
+
+
+.familyNameBar {
+  top: -30px;
+  position: relative;
+}
+
+.familyNameSpan {
+  position: relative;
+  background-color: white;
+  z-index: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.speciesName {
+  display: inline-block;
+  width: auto;
+  background-color: whitesmoke;
+  margin: 0px 12px 15px 12px;
+  padding: 10px 7px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.592);
+  font-size: large;
+  border-radius: 10% / 20%;
+}
+
+.choosed {
+  background-color: #0a3711;
+  color: white;
+}
+
