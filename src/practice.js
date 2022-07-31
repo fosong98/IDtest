@@ -14,7 +14,7 @@ class SubQuestion extends React.Component {
     return (
     <div class={"problem " + this.state.response}>
       <div class="item">{this.props.item}</div>
-      <input id={this.props.item} type="search" />
+      <input id={this.props.item} type="text" />
       <div class="answer">{this.props.answer}</div>
     </div>
     );
