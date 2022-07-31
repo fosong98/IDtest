@@ -136,7 +136,7 @@ class Board extends React.Component {
         continue;
       }
       if (this.families.get(family).length === 1) {
-        this.families.get("ETC").push(this.families.get(family));
+        this.families.get("ETC").push(this.families.get(family)[0]);
         this.families.delete(family);
       }
     }

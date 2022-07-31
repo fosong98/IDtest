@@ -6,15 +6,20 @@ class SubQuestion extends React.Component {
     }
     this.submit = this.submit.bind(this);
     this.prev = this.prev.bind(this);
+    this.clear = this.clear.bind(this);
     document.getElementById("prev").addEventListener("click", this.prev, false);
     document.getElementById("submit").addEventListener("click", this.submit, false);
+    document.getElementById("next").addEventListener("click", this.clear, false);
   }
 
   render() {
     return (
     <div class={"problem " + this.state.response}>
       <div class="item">{this.props.item}</div>
-      <input id={this.props.item} type="text" />
+      <div class="inputContainer">
+        <input id={this.props.item} type="text" />
+        <div onClick={this.clear}></div>
+      </div>
       <div class="answer">{this.props.answer}</div>
     </div>
     );
@@ -31,6 +36,11 @@ class SubQuestion extends React.Component {
     } else {
       this.setState({ response: "wrong" });
     }
+  }
+
+  clear() {
+    document.getElementById(this.props.item).value = "";
+    this.setState({ response: "none" });
   }
 
   prev() {
@@ -51,6 +61,7 @@ class Question extends React.Component {
       now : n
     };
     this.randomChoose = this.randomChoose.bind(this);
+    document.getElementById("next").addEventListener("click", this.randomChoose, false);
   }
 
   render() {
@@ -76,12 +87,12 @@ class Question extends React.Component {
       })
     }
     let randomIndex = Math.floor(Math.random() * this.state.keys.length);
+    let cur = this.state.keys[randomIndex];
     this.state.keys.splice(randomIndex, 1);
     this.setState({
       keys : this.state.keys,
-      now : this.state.keys[randomIndex]
+      now : cur
     });
-    alert(this.state.now);
   }
 }
 

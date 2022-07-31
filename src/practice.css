@@ -9,6 +9,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
   max-width: 980px;
 }
 
@@ -32,8 +33,20 @@ nav > button {
 }
 
 #title {
-  width: 100%;
+  width: 95%;
   text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  width: 95%;
+}
+
+.inputContainer>div {
+  width: min(5vw, 49px);
+  height: min(5vw, 49px);
+  border: black solid;
+  display: inline-block;
 }
 
 .answer {
@@ -57,7 +70,8 @@ nav > button {
 }
 
 input[type="text"] {
-  width: 95%;
+  display: inline-block;
+  width: calc(100% - min(5vw, 49px));
   height: min(5vw, 49px);
   font-size: min(2.5vw, 24.5px);
 }
@@ -77,6 +91,10 @@ input[type="text"] {
   visibility: visible;
 }
 
+#next {
+  float: right;
+}
+
 
 @media screen and (max-width: 980px) {
   #title {
@@ -91,20 +109,31 @@ input[type="text"] {
   nav>button {
     padding-left: 2%;
     padding-right: 2%;
-    width: auto;
+    width: 25%;
+    height: 4vh;
   }
   #control>button {
     padding-left: 2%;
     padding-right: 2%;
-    width: auto;
+    width: 25%;
+    height: 4vh;
   }
 
   html {
     font-size: 2.5vh;
   }
 
+  .inputContainer>div {
+    width: 4vh;
+    height: 4vh;
+    border: black solid;
+    display: inline-block;
+  }
+
+
   input[type="text"] {
-    height: 3vh;
+    width: calc(100% - 4vh);
+    height: 4vh;
     font-size: 1rem;
   }
 
@@ -117,7 +146,9 @@ input[type="text"] {
     font-size: 1rem;
   }
 
-
+  #container {
+    margin-bottom: 10vh;
+  }
 }
 
 
