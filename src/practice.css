@@ -1,5 +1,5 @@
 html {
-  font-size: min(2.5vw, 24.5px);
+  font-size:  24.5px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 980px;
+  max-width: 980px;
 }
 
 section {
@@ -22,8 +22,13 @@ section {
 
 nav {
   max-width: 980px;
-  width: 70%;
+  width: 95%;
   
+}
+
+nav > button {
+  width: 17%;
+  font-size: min(2vmax, 24.5px);
 }
 
 #title {
@@ -32,7 +37,7 @@ nav {
 }
 
 .answer {
-  width: 70%;
+  width: 95%;
   height: min(5vw, 49px);
   visibility: hidden;
   color: red;
@@ -43,16 +48,16 @@ nav {
 }
 
 #control {
-  width: 70%;
+  width: 95%;
 }
 
 #control > button {
   width: 15%;
-  font-size: min(2.5vw, 24.5px);
+  font-size: min(2vmax, 24.5px);
 }
 
 input[type="text"] {
-  width: 70%;
+  width: 95%;
   height: min(5vw, 49px);
   font-size: min(2.5vw, 24.5px);
 }
@@ -64,7 +69,7 @@ input[type="text"] {
 }
 
 .item {
-  width: 70%;
+  width: 95%;
   margin-bottom: min(1vw, 9.8px);
 }
 
@@ -74,29 +79,33 @@ input[type="text"] {
 
 
 @media screen and (max-width: 980px) {
+  #title {
+    font-size: min(3vmax, 49px);
+  }
   nav {
     margin-top: 1vh;
     height: 10vh;
+    
   }
 
-  nav > button {
-    width: 17%;
-    font-size:  1vw;
+  nav>button {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: auto;
+  }
+  #control>button {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: auto;
   }
 
   html {
-    font-size: 3vw;
-  }
-
-  #control > button {
-    width: 17%;
-    font-size:  1vw;
+    font-size: 2.5vh;
   }
 
   input[type="text"] {
-    width: 70%;
-    height: min(5vw, 49px);
-    font-size: min(2.5vw, 24.5px);
+    height: 3vh;
+    font-size: 1rem;
   }
 
   .problem {
@@ -104,8 +113,8 @@ input[type="text"] {
   }
 
   .item {
-    width: 70%;
     margin-bottom: min(1.5vw, 9.8px);
+    font-size: 1rem;
   }
 
 
