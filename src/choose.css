@@ -1,25 +1,50 @@
 html {
   font-size: 20px;
 }
+
 body {
-  margin: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-#container {
+section {
+  width: 980px;
+  margin: 0;
+}
+
+nav {
   width: 980px;
 }
 
+nav > button {
+  margin: 0px;
+  width: 12.5%;
+  height: 30px;
+}
+
+#prevPage {
+  margin-left: 1.5%;
+}
+
+#nextPage {
+  margin-left: 70%;
+  margin-right: 1.5%;
+}
+
+#container {
+  max-width: 980px;
+}
+
 .familyNameContainer {
+  height: 20%;
   margin: 20px 0px;
   text-align: center;
   position: relative;
 }
 
-
 .familyNameBar {
-  top:-2rem;
+  top: -1.5rem;
   position: relative;
 }
 
@@ -30,7 +55,7 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 1.5rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .speciesName {
@@ -48,4 +73,3 @@ body {
   background-color: #0a3711;
   color: white;
 }
-

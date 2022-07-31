@@ -21,10 +21,21 @@ class Name extends React.Component {
 class Family extends React.Component {
   constructor(props) {
     super(props);
+    let isAllChoosed = true;
+    for (let i = 0; i < this.props.values.length; i += 1) {
+      if (!this.props.alreadyClicked.has(this.props.values[i])) {
+        isAllChoosed = false;
+        break;
+      }
+    }
     this.state = {
-      choosed: false,
+      choosed: isAllChoosed,
       species: props.values.reduce((map, obj) => {
-        map.set(obj, false);
+        if (this.props.alreadyClicked.has(obj)) {
+          map.set(obj, true);
+        } else {
+          map.set(obj, false);
+        }
         return map;
       }, new Map)
     };
@@ -90,7 +101,6 @@ class Family extends React.Component {
           this.state.species.set(single, !this.state.choosed);
           
         }
-        
         return this.state.species;
       })()
     });
@@ -104,16 +114,30 @@ class Family extends React.Component {
 class Board extends React.Component {
   constructor(props) {
     super(props);
-    this.selectedKeys = localStorage.getItem("choosed") ?
-          new Set(JSON.parse(localStorage.getItem("choosed"))) : new Set();
+    this.selectedKeys = localStorage.getItem("keys") ?
+          new Set(JSON.parse(localStorage.getItem("keys"))) : new Set();
     console.log(this.selectedKeys);
     this.families = new Map();
     for (let i = 0; i < localStorage.length; i += 1) {
+      if (localStorage.key(i) === "keys") {
+        continue;
+      }
       let plant = JSON.parse(localStorage.getItem(localStorage.key(i)));
       if (this.families.has(plant.Family)) {
         this.families.get(plant.Family).push(plant.Cultivar);
       } else {
         this.families.set(plant.Family, [plant.Cultivar]);
+      }
+    }
+    this.families.set("ETC", []);
+
+    for (let family of this.families.keys()) {
+      if (family === "ETC") {
+        continue;
+      }
+      if (this.families.get(family).length === 1) {
+        this.families.get("ETC").push(this.families.get(family));
+        this.families.delete(family);
       }
     }
     console.log(this.families);
@@ -128,6 +152,7 @@ class Board extends React.Component {
             familyName={family} 
             values={this.families.get(family)} 
             onClick={name => this.selected(name)}
+            alreadyClicked={this.selectedKeys}
           />
         </div>
       )
@@ -142,6 +167,25 @@ class Board extends React.Component {
       this.selectedKeys.add(name);
     }
     console.log(this.selectedKeys);
+    uploadLocalStorage(this.selectedKeys);
+  }
+}
+
+function uploadLocalStorage(set) {
+  localStorage.setItem("keys", JSON.stringify(Array.from(set)));
+  console.log(localStorage.getItem("keys"));
+}
+
+function prev() {
+  location.href = "./index.html";
+}
+
+function next() {
+  let array = JSON.parse(localStorage.getItem("keys"));
+  if (array.length === 0) {
+    alert("선택하세요.");
+  } else {
+    location.href = "./practice.html";
   }
 }
 
