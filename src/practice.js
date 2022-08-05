@@ -18,7 +18,9 @@ class SubQuestion extends React.Component {
       <div class="item">{this.props.item}</div>
       <div class="inputContainer">
         <input id={this.props.item} type="text" />
-        <div onClick={this.clear}></div>
+
+        <i onClick={this.clear} className="fas fa-circle-xmark fa-lg"></i>
+
       </div>
       <div class="answer">{this.props.answer}</div>
     </div>

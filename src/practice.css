@@ -42,13 +42,6 @@ nav > button {
   width: 95%;
 }
 
-.inputContainer>div {
-  width: min(5vw, 49px);
-  height: min(5vw, 49px);
-  border: black solid;
-  display: inline-block;
-}
-
 .answer {
   width: 95%;
   height: min(5vw, 49px);
@@ -71,9 +64,10 @@ nav > button {
 
 input[type="text"] {
   display: inline-block;
-  width: calc(100% - min(5vw, 49px));
+  width: calc(100% - min(5vw, 49px) - 10px);
   height: min(5vw, 49px);
   font-size: min(2.5vw, 24.5px);
+  margin-right: 10px;
 }
 
 .problem {
@@ -123,18 +117,15 @@ input[type="text"] {
     font-size: 2.5vh;
   }
 
-  .inputContainer>div {
-    width: 4vh;
-    height: 4vh;
-    border: black solid;
-    display: inline-block;
+  i {
+    font-size: 1rem;
   }
 
-
   input[type="text"] {
-    width: calc(100% - 4vh);
+    width: calc(100% - 4vh - 10px);
     height: 4vh;
     font-size: 1rem;
+    margin-right: 10px;
   }
 
   .problem {
@@ -149,6 +140,14 @@ input[type="text"] {
   #container {
     margin-bottom: 10vh;
   }
+}
+
+#submit {
+  margin-left: 45%;
+}
+
+#inputContainer>i {
+  --fa-li-margin : 50px 0 0 0;
 }
 
 
