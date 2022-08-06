@@ -28,7 +28,7 @@ body {
 section {
   width: 100%;
   max-width: 980px;
-  margin: 0, auto;
+  margin: 0;
 }
 
 #testButton, #practiceButton {

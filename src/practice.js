@@ -10,6 +10,7 @@ class SubQuestion extends React.Component {
     document.getElementById("prev").addEventListener("click", this.prev, false);
     document.getElementById("submit").addEventListener("click", this.submit, false);
     document.getElementById("next").addEventListener("click", this.clear, false);
+    document.getElementById("deleteAll").addEventListener("click", this.clear, false);
   }
 
   render() {
@@ -19,7 +20,7 @@ class SubQuestion extends React.Component {
       <div class="inputContainer">
         <input id={this.props.item} type="text" />
 
-        <i onClick={this.clear} className="fas fa-circle-xmark fa-lg"></i>
+        <i onClick={this.clear} className="fa-solid fa-circle-xmark"></i>
 
       </div>
       <div class="answer">{this.props.answer}</div>
@@ -28,11 +29,11 @@ class SubQuestion extends React.Component {
   }
 
   submit() {
-    let input = document.getElementById(this.props.item).value;
+    let input = document.getElementById(this.props.item).value.trim().toUpperCase();
     if (input === "") {
       this.setState({ response: "none" });
       document.getElementById(this.props.item).value = this.props.answer;
-    } else if (input === this.props.answer) {
+    } else if (input === this.props.answer.trim().toUpperCase()) {
       this.setState({ response: "correct" });
       document.getElementById(this.props.item).value = this.props.answer;
     } else {
