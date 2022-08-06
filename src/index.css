@@ -72,3 +72,9 @@ input {
   background:#0a3711;
   background-color: #0a3711;
 }
+
+@media screen and (max-width: 980px) {
+  body {
+    margin-top: 20vh;
+  }
+}
