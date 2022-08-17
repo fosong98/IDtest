@@ -4,7 +4,7 @@ function start() {
     if (localStorage.length === 0 || localStorage.length === 1) {
       alert("파일을 업로드 하세요.");
     } else {
-      location.href = "./choose.html";
+      location.href = "./html/choose.html";
     }
   })
 }

@@ -177,7 +177,7 @@ function uploadLocalStorage(set) {
 }
 
 function prev() {
-  location.href = "./index.html";
+  location.href = "../index.html";
 }
 
 function next() {
@@ -185,7 +185,7 @@ function next() {
   if (array.length === 0) {
     alert("선택하세요.");
   } else {
-    location.href = "./practice.html";
+    location.href = "../html/practice.html";
   }
 }
 

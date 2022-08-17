@@ -47,7 +47,7 @@ class SubQuestion extends React.Component {
   }
 
   prev() {
-    location.href = "./choose.html";
+    location.href = "../html/choose.html";
   }
 }
 
